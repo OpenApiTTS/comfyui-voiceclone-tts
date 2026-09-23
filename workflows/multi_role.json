@@ -1,0 +1,677 @@
+{
+  "revision": 0,
+  "last_node_id": 6,
+  "last_link_id": 4,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "VoiceCloneVoiceList",
+      "pos": [
+        80,
+        180
+      ],
+      "size": [
+        270,
+        126
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "voice",
+          "name": "voice",
+          "type": "COMBO",
+          "widget": {
+            "name": "voice"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "refresh",
+          "name": "refresh",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "refresh"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "api_key",
+          "name": "api_key",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "api_key"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "audio_id",
+          "name": "audio_id",
+          "type": "STRING",
+          "links": [
+            1
+          ]
+        },
+        {
+          "localized_name": "name",
+          "name": "name",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VoiceCloneVoiceList"
+      },
+      "widgets_values": [
+        "角色A",
+        false,
+        ""
+      ],
+      "widgets_values_named": {
+        "voice": "角色A",
+        "refresh": false,
+        "api_key": ""
+      }
+    },
+    {
+      "id": 2,
+      "type": "VoiceCloneTTS",
+      "pos": [
+        480,
+        60
+      ],
+      "size": [
+        400,
+        344
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "audio_id",
+          "name": "audio_id",
+          "type": "STRING",
+          "link": 1
+        },
+        {
+          "localized_name": "text",
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "style",
+          "name": "style",
+          "type": "COMBO",
+          "widget": {
+            "name": "style"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "target_speech",
+          "name": "target_speech",
+          "type": "COMBO",
+          "widget": {
+            "name": "target_speech"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "speed",
+          "name": "speed",
+          "type": "FLOAT",
+          "widget": {
+            "name": "speed"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "emotion_mode",
+          "name": "emotion_mode",
+          "type": "COMBO",
+          "widget": {
+            "name": "emotion_mode"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "emotion_type",
+          "name": "emotion_type",
+          "type": "COMBO",
+          "widget": {
+            "name": "emotion_type"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "emotion_strength",
+          "name": "emotion_strength",
+          "type": "FLOAT",
+          "widget": {
+            "name": "emotion_strength"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "auto_split",
+          "name": "auto_split",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "auto_split"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "emotion_audio_path",
+          "name": "emotion_audio_path",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "emotion_audio_path"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "api_key",
+          "name": "api_key",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "api_key"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "audio",
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            2
+          ]
+        },
+        {
+          "localized_name": "file_path",
+          "name": "file_path",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "localized_name": "task_id",
+          "name": "task_id",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VoiceCloneTTS"
+      },
+      "widgets_values": [
+        "你终于来了，我等你很久了。",
+        "V2.5 情绪版",
+        "mandarin",
+        1,
+        "情绪向量",
+        "sad",
+        0.6,
+        true,
+        "",
+        ""
+      ],
+      "widgets_values_named": {
+        "text": "你终于来了，我等你很久了。",
+        "style": "V2.5 情绪版",
+        "target_speech": "mandarin",
+        "speed": 1,
+        "emotion_mode": "情绪向量",
+        "emotion_type": "sad",
+        "emotion_strength": 0.6,
+        "auto_split": true,
+        "emotion_audio_path": "",
+        "api_key": ""
+      }
+    },
+    {
+      "id": 3,
+      "type": "SaveAudioAdvanced",
+      "pos": [
+        980,
+        160
+      ],
+      "size": [
+        270,
+        160
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "audio",
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 2
+        },
+        {
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "format",
+          "name": "format",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "format"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "quality",
+          "name": "format.quality",
+          "type": "COMBO",
+          "widget": {
+            "name": "format.quality"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audioUI",
+          "name": "audioUI",
+          "type": "AUDIO_UI",
+          "widget": {
+            "name": "audioUI"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "audio",
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "audio/roleA",
+        "mp3",
+        "V0"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "audio/roleA",
+        "format": "mp3",
+        "format.quality": "V0"
+      }
+    },
+    {
+      "id": 4,
+      "type": "VoiceCloneVoiceList",
+      "pos": [
+        80,
+        610
+      ],
+      "size": [
+        270,
+        126
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "voice",
+          "name": "voice",
+          "type": "COMBO",
+          "widget": {
+            "name": "voice"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "refresh",
+          "name": "refresh",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "refresh"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "api_key",
+          "name": "api_key",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "api_key"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "audio_id",
+          "name": "audio_id",
+          "type": "STRING",
+          "links": [
+            3
+          ]
+        },
+        {
+          "localized_name": "name",
+          "name": "name",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VoiceCloneVoiceList"
+      },
+      "widgets_values": [
+        "角色B",
+        false,
+        ""
+      ],
+      "widgets_values_named": {
+        "voice": "角色B",
+        "refresh": false,
+        "api_key": ""
+      }
+    },
+    {
+      "id": 5,
+      "type": "VoiceCloneTTS",
+      "pos": [
+        480,
+        490
+      ],
+      "size": [
+        400,
+        344
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "audio_id",
+          "name": "audio_id",
+          "type": "STRING",
+          "link": 3
+        },
+        {
+          "localized_name": "text",
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "style",
+          "name": "style",
+          "type": "COMBO",
+          "widget": {
+            "name": "style"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "target_speech",
+          "name": "target_speech",
+          "type": "COMBO",
+          "widget": {
+            "name": "target_speech"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "speed",
+          "name": "speed",
+          "type": "FLOAT",
+          "widget": {
+            "name": "speed"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "emotion_mode",
+          "name": "emotion_mode",
+          "type": "COMBO",
+          "widget": {
+            "name": "emotion_mode"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "emotion_type",
+          "name": "emotion_type",
+          "type": "COMBO",
+          "widget": {
+            "name": "emotion_type"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "emotion_strength",
+          "name": "emotion_strength",
+          "type": "FLOAT",
+          "widget": {
+            "name": "emotion_strength"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "auto_split",
+          "name": "auto_split",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "auto_split"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "emotion_audio_path",
+          "name": "emotion_audio_path",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "emotion_audio_path"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "api_key",
+          "name": "api_key",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "api_key"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "audio",
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            4
+          ]
+        },
+        {
+          "localized_name": "file_path",
+          "name": "file_path",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "localized_name": "task_id",
+          "name": "task_id",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VoiceCloneTTS"
+      },
+      "widgets_values": [
+        "路上耽搁了，别生气。",
+        "V2.5 情绪版",
+        "mandarin",
+        1,
+        "跟随参考音频",
+        "calm",
+        0.6,
+        true,
+        "",
+        ""
+      ],
+      "widgets_values_named": {
+        "text": "路上耽搁了，别生气。",
+        "style": "V2.5 情绪版",
+        "target_speech": "mandarin",
+        "speed": 1,
+        "emotion_mode": "跟随参考音频",
+        "emotion_type": "calm",
+        "emotion_strength": 0.6,
+        "auto_split": true,
+        "emotion_audio_path": "",
+        "api_key": ""
+      }
+    },
+    {
+      "id": 6,
+      "type": "SaveAudioAdvanced",
+      "pos": [
+        980,
+        590
+      ],
+      "size": [
+        270,
+        160
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "audio",
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 4
+        },
+        {
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "format",
+          "name": "format",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "format"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "quality",
+          "name": "format.quality",
+          "type": "COMBO",
+          "widget": {
+            "name": "format.quality"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audioUI",
+          "name": "audioUI",
+          "type": "AUDIO_UI",
+          "widget": {
+            "name": "audioUI"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "audio",
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "audio/roleB",
+        "mp3",
+        "V0"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "audio/roleB",
+        "format": "mp3",
+        "format.quality": "V0"
+      }
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "STRING"
+    ],
+    [
+      2,
+      2,
+      0,
+      3,
+      0,
+      "AUDIO"
+    ],
+    [
+      3,
+      4,
+      0,
+      5,
+      0,
+      "STRING"
+    ],
+    [
+      4,
+      5,
+      0,
+      6,
+      0,
+      "AUDIO"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}

@@ -1,0 +1,6 @@
+# 发布到 Comfy Registry 时排除，不影响 git
+docs/
+.github/
+__pycache__/
+*.py[cod]
+.DS_Store

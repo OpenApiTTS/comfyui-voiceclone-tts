@@ -1,0 +1,22 @@
+# 改动 pyproject.toml 的 version 后推到 main，自动发布到 Comfy Registry。
+# 前置：仓库 Settings → Secrets → Actions 里加 REGISTRY_ACCESS_TOKEN
+name: Publish to Comfy Registry
+
+on:
+  push:
+    branches: [main]
+    paths: ['pyproject.toml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish
+        uses: Comfy-Org/publish-node-action@main
+        with:
+          personal_access_token: ${{ secrets.REGISTRY_ACCESS_TOKEN }}
