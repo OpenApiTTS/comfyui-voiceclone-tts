@@ -1,0 +1,21 @@
+# Comfy Registry / ComfyUI-Manager 元数据。
+# name 一经发布不可更改，且会成为 custom_nodes 下的子目录名，必须与仓库名一致。
+# dependencies 故意为空：节点只用 Python 标准库 + ComfyUI 自带的 torch/torchaudio。
+[project]
+name = "comfyui-voiceclone-tts"
+version = "1.0.0"
+description = "ComfyUI 声音克隆与语音合成节点：方言、情绪、多角色、长文本自动分段"
+license = { file = "LICENSE" }
+requires-python = ">=3.9"
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/OpenApiTTS/comfyui-voiceclone-tts"
+Documentation = "https://github.com/OpenApiTTS/comfyui-voiceclone-tts#readme"
+
+[tool.comfy]
+# TODO 换成 registry.comfy.org 注册后个人主页 @ 后面的真实 publisher id（全局唯一、不可改）
+PublisherId = "openapitts"
+DisplayName = "VoiceClone TTS"
+# 图标 URL（SVG/PNG/JPG/GIF，不超过 800x400）；没有就保持注释，别留空字符串
+# Icon = "https://example.com/comfyui-voiceclone-icon.png"

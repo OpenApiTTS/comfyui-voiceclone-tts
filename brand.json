@@ -1,0 +1,10 @@
+{
+  "brand": "voiceclone",
+  "base_url": "https://openapi.anyvoice.cn",
+  "node_prefix": "AI语音克隆",
+  "env_key": "VOICE_API_KEY",
+  "env_base_url": "VOICE_API_BASE",
+  "doc_url": "",
+  "clone_rule_url": "",
+  "output_subdir": "voiceclone"
+}
